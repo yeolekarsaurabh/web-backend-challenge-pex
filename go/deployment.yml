@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibo-go-web-app
+  namespace: web-tech-challenge-saurabhyeolekar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: fibo-go-web-app
+  template:
+    metadata:
+      labels:
+        name: fibo-go-web-app
+    spec:
+      containers:
+      - name: application
+        image: saurabhyeolekar/fibo-web-pex-go
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3000
+        resources:
+          limits:
+            cpu: 1
+            memory: 512Mi

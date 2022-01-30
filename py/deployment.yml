@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibo-python-web-app
+  namespace: web-tech-challenge-saurabhyeolekar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: fibo-python-web-app
+  template:
+    metadata:
+      labels:
+        name: fibo-python-web-app
+    spec:
+      containers:
+      - name: application
+        image: saurabhyeolekar/fibo-web-pex-python
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 3035
+        resources:
+          limits:
+            cpu: 1
+            memory: 512Mi
