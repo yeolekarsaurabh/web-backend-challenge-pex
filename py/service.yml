@@ -7,7 +7,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: http
-    port: 3030
+    port: 3035
     targetPort: 3035
   selector:
     name: fibo-python-web-app
