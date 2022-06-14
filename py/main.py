@@ -19,7 +19,7 @@ class Fibonacci:
 
   def previous(self) -> int or str:
     if self.current_fib == 0:
-      raise Exception("Cannot go previous anymore")
+      raise Exception("Cannot go previous")
 
     temp = self.next_fib - self.current_fib
     self.next_fib = self.current_fib
